@@ -6,7 +6,7 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home({ allPostsData }) {
   return (
@@ -14,27 +14,19 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <main className="h-screen w-screen grid grid-cols-10 bg-green-200">
-        <aside className="bg-blue-200">
-          <p className={usuyukiStyles.tate}>2020 copyrightUsuyuki</p>
+      <main className="h-screen w-screen grid grid-cols-10 ">
+        <aside className="">
+          <p className={usuyukiStyles.copyright}>2020 copyrightUsuyuki</p>
         </aside>
 
         <div className="col-span-8">
-          <section className="w-1/2">
-            <p className="text-center">大学1年生です。珈琲が好きです。</p>
+          <section className="">
+            <p className="text-center mx-auto">
+              大学1年生です。珈琲が好きです。
+            </p>
           </section>
 
-          <aside>
-            <nav className="text-white w-1/2 mt-5 bg-gray-400 rounded-full h-12 w-12 flex items-center justify-center">
-              <FontAwesomeIcon icon={faTwitter} />
-              <section className="mt-5 bg-gray-400 rounded-full h-12 w-12 flex items-center justify-center">
-                <p>　</p>
-              </section>
-            </nav>
-          </aside>
-          <section
-            className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
-          >
+          <section className="text-center mx-auto">
             <h2 className={utilStyles.headingLg}>Works</h2>
             <ul className={utilStyles.list}>
               {allPostsData.map(({ id, date, title }) => (
@@ -51,8 +43,14 @@ export default function Home({ allPostsData }) {
             </ul>
           </section>
         </div>
-        <nav className="bg-yellow-200">
-          <p>SNS</p>
+        <nav className={usuyukiStyles.fixedSocial}>
+          <p>Social</p>
+          <a href="https://twitter.com/usuyuki26" className="text-gray-800">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href="https://github.com/Usuyuki" className="text-gray-800">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </nav>
       </main>
     </Layout>
