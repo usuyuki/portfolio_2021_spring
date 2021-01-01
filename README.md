@@ -1,1 +1,4 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## SSR で作る新しいポートフォリオです。
+
+3 度目のポートフォリオ。
+今回は 2 度目が WordPress で作っているのでその API を叩いて持ってくる形をとりました。
