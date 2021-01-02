@@ -30,21 +30,22 @@ export default function Home({ allWorksPostsData, allPostsData }) {
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              {/* {allWorksPostsData.map(({ id, date, title }) => (
-                <li className="m-5" key={id}>
-                  <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
+              {allWorksPostsData.map((data) => (
+                <li className="m-5" key={data.id}>
+                  <Link href={`/works/${data.id}`}>
+                    <a>{data.title.rendered}</a>
                   </Link>
                   <br />
                   <small className="text-center text-gray-600">
-                    <Date dateString={date} />
+                    {data.date_gmt}
                   </small>
+                  <p>{data.content.rendered}</p>
                 </li>
-              ))} */}
+              ))}
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allWorks">
-                <a>Show more</a>
+                <a class="hover:text-white">Show more</a>
               </Link>
             </button>
           </section>
@@ -65,7 +66,7 @@ export default function Home({ allWorksPostsData, allPostsData }) {
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allArticles.js">
-                <a>Show more</a>
+                <a class="hover:text-white">Show more</a>
               </Link>
             </button>
           </section>
@@ -85,8 +86,13 @@ export default function Home({ allWorksPostsData, allPostsData }) {
 }
 
 export async function getStaticProps() {
+  const repoUrl = "https://portfolio.usuyuki.net/wp-json/wp/v2/work";
+  const response = await fetch(repoUrl);
+  const data = await response.json();
+  // console.log(data);
   const allPostsData = getSortedPostsData();
-  const allWorksPostsData = getWorksSortedPostsData();
+
+  const allWorksPostsData = data;
   return {
     props: {
       allPostsData,
