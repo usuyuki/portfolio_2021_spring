@@ -3,12 +3,13 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import usuyukiStyles from "../styles/usuyuki.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { getWorksSortedPostsData } from "../lib/WPworks";
 import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function Home({ allPostsData }) {
+export default function Home({ allWorksPostsData, allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -29,7 +30,7 @@ export default function Home({ allPostsData }) {
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              {allPostsData.map(({ id, date, title }) => (
+              {allWorksPostsData.map(({ id, date, title }) => (
                 <li className="m-5" key={id}>
                   <Link href={`/posts/${id}`}>
                     <a>{title}</a>
@@ -42,7 +43,9 @@ export default function Home({ allPostsData }) {
               ))}
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-              Show more
+              <Link href="/archive/allWorks">
+                <a>Show more</a>
+              </Link>
             </button>
           </section>
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
@@ -61,7 +64,9 @@ export default function Home({ allPostsData }) {
               ))}
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-              Show more
+              <Link href="/archive/allArticles.js">
+                <a>Show more</a>
+              </Link>
             </button>
           </section>
         </div>
@@ -81,9 +86,11 @@ export default function Home({ allPostsData }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const allWorksPostsData = getWorksSortedPostsData();
   return {
     props: {
       allPostsData,
+      allWorksPostsData,
     },
   };
 }
