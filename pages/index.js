@@ -30,7 +30,7 @@ export default function Home({ allWorksPostsData, allPostsData }) {
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              {allWorksPostsData.map(({ id, date, title }) => (
+              {/* {allWorksPostsData.map(({ id, date, title }) => (
                 <li className="m-5" key={id}>
                   <Link href={`/posts/${id}`}>
                     <a>{title}</a>
@@ -40,7 +40,7 @@ export default function Home({ allWorksPostsData, allPostsData }) {
                     <Date dateString={date} />
                   </small>
                 </li>
-              ))}
+              ))} */}
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allWorks">
