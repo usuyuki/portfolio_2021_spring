@@ -16,7 +16,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <main className="h-screen w-screen grid grid-cols-10 ">
         <aside className="">
-          <p className={usuyukiStyles.copyright}>2020 copyrightUsuyuki</p>
+          <p className={usuyukiStyles.copyright}>copyright 2020 usuyuki</p>
         </aside>
 
         <div className="col-span-8">
@@ -26,21 +26,43 @@ export default function Home({ allPostsData }) {
             </p>
           </section>
 
-          <section className="text-center mx-auto">
-            <h2 className={utilStyles.headingLg}>Works</h2>
-            <ul className={utilStyles.list}>
+          <section className="text-center mx-auto my-5 border border-3 border-gray-300">
+            <h2 className="text-center text-2xl mt-5">Latest works</h2>
+            <ul className="">
               {allPostsData.map(({ id, date, title }) => (
-                <li className={utilStyles.listItem} key={id}>
+                <li className="m-5" key={id}>
                   <Link href={`/posts/${id}`}>
                     <a>{title}</a>
                   </Link>
                   <br />
-                  <small className={utilStyles.lightText}>
+                  <small className="text-center text-gray-600">
                     <Date dateString={date} />
                   </small>
                 </li>
               ))}
             </ul>
+            <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
+              Show more
+            </button>
+          </section>
+          <section className="text-center mx-auto my-5 border border-3 border-gray-300">
+            <h2 className="text-center text-2xl mt-5">Latest articles</h2>
+            <ul className="">
+              {allPostsData.map(({ id, date, title }) => (
+                <li className="m-5" key={id}>
+                  <Link href={`/posts/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                  <br />
+                  <small className="text-center text-gray-600">
+                    <Date dateString={date} />
+                  </small>
+                </li>
+              ))}
+            </ul>
+            <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
+              Show more
+            </button>
           </section>
         </div>
         <nav className={usuyukiStyles.fixedSocial}>
