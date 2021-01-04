@@ -3,13 +3,13 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import usuyukiStyles from "../styles/usuyuki.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import { getWorksSortedPostsData } from "../lib/WPworks";
+import { getWorksSortedPostsDataProcessed } from "../lib/WPworks";
 import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function Home({ allWorksPostsData, allPostsData }) {
+export default function Home({ getWorksSortedPostsDataProcessed, allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -25,23 +25,17 @@ export default function Home({ allWorksPostsData, allPostsData }) {
             <p className="text-center mx-auto">
               大学1年生です。珈琲が好きです。
             </p>
+            <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
+            <Link href="/aboutMe">
+                <a class="hover:text-white">Show about me more</a>
+              </Link>
+              </button>
           </section>
 
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              {allWorksPostsData.map((data) => (
-                <li className="m-5" key={data.id}>
-                  <Link href={`/works/${data.id}`}>
-                    <a>{data.title.rendered}</a>
-                  </Link>
-                  <br />
-                  <small className="text-center text-gray-600">
-                    {data.date_gmt}
-                  </small>
-                  <p>{data.content.rendered}</p>
-                </li>
-              ))}
+              <getWorksSortedPostsDataProcessed></getWorksSortedPostsDataProcessed>
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allWorks">
@@ -86,17 +80,14 @@ export default function Home({ allWorksPostsData, allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const repoUrl = "https://portfolio.usuyuki.net/wp-json/wp/v2/work";
-  const response = await fetch(repoUrl);
-  const data = await response.json();
+
   // console.log(data);
   const allPostsData = getSortedPostsData();
-
-  const allWorksPostsData = data;
+  // const worksData=getWorksSortedPostsDataProcessed();
   return {
     props: {
       allPostsData,
-      allWorksPostsData,
+      // worksData,
     },
   };
 }
