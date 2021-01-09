@@ -98,8 +98,8 @@ export async function getStaticProps() {
   const allWorksData=getWorksSortedPostsData();
   return {
     props: {
-      allPostsData,
-      allWorksData,
+      allPostsData:allPostsData,
+      allWorksData:allWorksData,
     },
   };
 }

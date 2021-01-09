@@ -84,10 +84,10 @@ export default function Home({ allWorksPostsData, allPostsData }) {
   );
 }
 
-export async function getStaticProps() {
+export function getStaticProps() {
   const allPostsData = getSortedPostsData();
 
-  const allWorksPostsData = getWorksSortedPostsData();
+  const allWorksPostsData = JSON.stringify(getWorksSortedPostsData());
   return {
     props: {
       allPostsData,
