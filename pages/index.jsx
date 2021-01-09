@@ -60,6 +60,7 @@ export default function Home({ allWorksData,allPostsData }) {
                   </small>
              
                   <p>{data.content}</p>
+                  {/* <p>{data.work_tech}</p> */}
                 </li>
               ))}
             </ul>
