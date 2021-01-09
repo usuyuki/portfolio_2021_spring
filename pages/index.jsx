@@ -3,13 +3,13 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import usuyukiStyles from "../styles/usuyuki.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import { getWorksSortedPostsDataProcessed } from "../lib/WPworks";
+import { getWorksSortedPostsData } from "../lib/WPworks";
 import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function Home({ getWorksSortedPostsDataProcessed, allPostsData }) {
+export default function Home({ allWorksData,allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -27,7 +27,7 @@ export default function Home({ getWorksSortedPostsDataProcessed, allPostsData })
             </p>
             <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
             <Link href="/aboutMe">
-                <a class="hover:text-white">Show about me more</a>
+                <a className="hover:text-white">Show about me more</a>
               </Link>
               </button>
           </section>
@@ -35,7 +35,19 @@ export default function Home({ getWorksSortedPostsDataProcessed, allPostsData })
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              <getWorksSortedPostsDataProcessed></getWorksSortedPostsDataProcessed>
+              {allWorksData.map((id, date, title,link,content) => (
+                <li className="m-5" key={id}>
+                  <Link href={`/works/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                  <br />
+                  <small className="text-center text-gray-600">
+                    {date}
+                  </small>
+                  <p>{data.content.rendered}</p>
+                  <P>{content}</P>
+                </li>
+              ))}
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allWorks">
@@ -83,11 +95,11 @@ export async function getStaticProps() {
 
   // console.log(data);
   const allPostsData = getSortedPostsData();
-  // const worksData=getWorksSortedPostsDataProcessed();
+  const allWorksData=getWorksSortedPostsData();
   return {
     props: {
       allPostsData,
-      // worksData,
+      allWorksData,
     },
   };
 }
