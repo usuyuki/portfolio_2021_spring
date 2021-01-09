@@ -25,11 +25,14 @@ export default function Home({ allWorksData,allPostsData }) {
             <p className="text-center mx-auto">
               大学1年生です。珈琲が好きです。
             </p>
+            <div className="text-center mt-4">
+
             <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
             <Link href="/aboutMe">
                 <a className="hover:text-white">Show about me more</a>
               </Link>
               </button>
+            </div>
           </section>
 
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
@@ -49,7 +52,7 @@ export default function Home({ allWorksData,allPostsData }) {
               </li>
               };} */}
                 {/* <p>{allWorksData}</p> */}
-              {allWorksData.map((data) => (
+              {/* {allWorksData.map((data) => (
                 <li className="m-5" key={data.id}>
                   <Link href={`/works/${data.id}`}>
                     <a>{data.title}</a>
@@ -60,9 +63,35 @@ export default function Home({ allWorksData,allPostsData }) {
                   </small>
              
                   <p>{data.content}</p>
-                  {/* <p>{data.work_tech}</p> */}
+                  <p>{data.work_tech}</p>
                 </li>
-              ))}
+              ))} */}
+    
+                <li className="m-5" key={allWorksData[0].id}>
+                  <Link href={`/works/${allWorksData[0].id}`}>
+                    <a>{allWorksData[0].title}</a>
+                  </Link>
+                  <br />
+                  <small className="text-center text-gray-600">
+                    {allWorksData[0].date}
+                  </small>
+             
+                  <p>{allWorksData[0].content}</p>
+                  <p>{allWorksData[0].work_tech}</p>
+                </li>
+                <li className="m-5" key={allWorksData[1].id}>
+                  <Link href={`/works/${allWorksData[1].id}`}>
+                    <a>{allWorksData[1].title}</a>
+                  </Link>
+                  <br />
+                  <small className="text-center text-gray-600">
+                    {allWorksData[1].date}
+                  </small>
+             
+                  <p>{allWorksData[1].content}</p>
+                  <p>{allWorksData[1].work_tech}</p>
+                </li>
+          
             </ul>
             <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
               <Link href="/archive/allWorks">
@@ -70,7 +99,7 @@ export default function Home({ allWorksData,allPostsData }) {
               </Link>
             </button>
           </section>
-          <section className="text-center mx-auto my-5 border border-3 border-gray-300">
+          {/* <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest articles</h2>
             <ul className="">
               {allPostsData.map(({ id, date, title }) => (
@@ -90,7 +119,7 @@ export default function Home({ allWorksData,allPostsData }) {
                 <a class="hover:text-white">Show more</a>
               </Link>
             </button>
-          </section>
+          </section> */}
         </div>
         <nav className={usuyukiStyles.fixedSocial}>
           <p>Social</p>
