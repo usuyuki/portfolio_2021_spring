@@ -35,17 +35,31 @@ export default function Home({ allWorksData,allPostsData }) {
           <section className="text-center mx-auto my-5 border border-3 border-gray-300">
             <h2 className="text-center text-2xl mt-5">Latest works</h2>
             <ul className="">
-              {allWorksData.map((id, date, title,link,content) => (
-                <li className="m-5" key={id}>
-                  <Link href={`/works/${id}`}>
-                    <a>{title}</a>
+              {/* {for(allWorksData of works){
+                <li className="m-5" key={works.id}>
+                <Link href={`/works/${works.id}`}>
+                  <a>{works.title}</a>
+                </Link>
+                <br />
+                <small className="text-center text-gray-600">
+                  {works.date}
+                </small>
+           
+                <p>{works.content}</p>
+              </li>
+              };} */}
+                {/* <p>{allWorksData}</p> */}
+              {allWorksData.map((data) => (
+                <li className="m-5" key={data.id}>
+                  <Link href={`/works/${data.id}`}>
+                    <a>{data.title}</a>
                   </Link>
                   <br />
                   <small className="text-center text-gray-600">
-                    {date}
+                    {data.date}
                   </small>
-                  <p>{data.content.rendered}</p>
-                  <P>{content}</P>
+             
+                  <p>{data.content}</p>
                 </li>
               ))}
             </ul>
@@ -95,7 +109,8 @@ export async function getStaticProps() {
 
   // console.log(data);
   const allPostsData = getSortedPostsData();
-  const allWorksData=getWorksSortedPostsData();
+  const allWorksData=await getWorksSortedPostsData();
+  console.log(allWorksData)
   return {
     props: {
       allPostsData:allPostsData,
