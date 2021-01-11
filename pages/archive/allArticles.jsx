@@ -1,23 +1,23 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../../components/layout";
 
-import { getWorksSortedPostsData } from "../../lib/WPworks";
+import { getBlogsSortedPostsData } from "../../lib/WPworks";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function FirstPost({ allWorksData }) {
+export default function FirstPost({ allBlogsData }) {
   return (
     <Layout>
       <Head>
-        <title>All Works</title>
+        <title>All Blogs</title>
       </Head>
-      <h1>All Works</h1>
+      <h1>All Blogs</h1>
       <section className="text-center mx-auto my-5 border border-3 border-gray-300">
         <h2 className="text-center text-2xl mt-5">Latest works</h2>
         <ul className="">
-          {allWorksData.map((data) => (
+          {allBlogsData.map((data) => (
             <li className="m-5" key={data.id}>
               <Link href={`/works/${data.id}`}>
                 <a>{data.title}</a>
@@ -40,11 +40,11 @@ export default function FirstPost({ allWorksData }) {
   );
 }
 export async function getStaticProps() {
-  const allWorksData = await getWorksSortedPostsData();
-  //(allWorksData);
+  const allBlogsData = await getBlogsSortedPostsData();
+  //(allBlogsData);
   return {
     props: {
-      allWorksData: allWorksData,
+      allBlogsData: allBlogsData,
     },
   };
 }

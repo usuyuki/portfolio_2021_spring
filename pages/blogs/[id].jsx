@@ -1,6 +1,6 @@
 import Layout from "../../components/layout";
 // import { getAllPostIds, getPostData } from "../../lib/posts";
-import { getWorksAllPostIds, getWorksPostData } from "../../lib/WPworks";
+import { getBlogsAllPostIds, getBlogsPostData } from "../../lib/WPworks";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
@@ -31,7 +31,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getWorksAllPostIds();
+  const paths = await getBlogsAllPostIds();
   //   paths.then((data) => (data));
   // ("hi")
   return {
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // ("ya")
-  const postData = await getWorksPostData(params.id);
+  const postData = await getBlogsPostData(params.id);
   // (postData)
   return {
     props: {
