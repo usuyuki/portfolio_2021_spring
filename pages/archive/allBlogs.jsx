@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../../components/layout";
 
-import { getBlogsSortedPostsData } from "../../lib/WPworks";
+import { getBlogsSortedPostsData } from "../../lib/WPBlogs";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
