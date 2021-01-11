@@ -34,8 +34,8 @@ export default function Home({ allWorksData, allBlogsData }) {
               </button>
             </div>
           </section>
-          <div className="h-screen flex flex-wrap flex-row">
-            <section className="text-center mx-auto my-5 border border-3  border-gray-600 rounded-2xl  w-1/2">
+          <div className="h-screen grid grid-cols-2  gap-4">
+            <section className="text-center mx-auto my-5 border border-3  border-gray-600 rounded-2xl  ">
               <h2 className="text-center text-2xl mt-5">Latest works</h2>
               <ul className="">
                 <li className="m-5" key={allWorksData[0].id}>
@@ -70,7 +70,7 @@ export default function Home({ allWorksData, allBlogsData }) {
               </button>
             </section>
             {/* ここからブログ */}
-            <section className="text-center  my-5 border border-3 border-gray-600 rounded-2xl ml-4 w-1/2">
+            <section className="text-center  my-5 border border-3 border-gray-600 rounded-2xl  ">
               <h2 className="text-center text-2xl mt-5">Latest Blogs</h2>
               <ul className="">
                 <li className="m-5" key={allBlogsData[0].id}>
