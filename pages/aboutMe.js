@@ -11,34 +11,37 @@ export default function AboutMe() {
           2002年生まれの18歳です。
         </p>
       </section>
-      <section className="border border-2 border-purple-400 my-12 py-12 rounded-3xl ">
+      <section className="border border-2 border-purple-400 my-12 py-12 rounded-3xl flex flex-col">
         <h2 className="text-center text-xl mb-4 text-blue-500 ">
           Educational background
         </h2>
-        <p className="mx-auto w-1/3 text-left">
-          2020年
-          <span className="border-b-2 border-black ">
-            宇都宮大学工学部基盤工学科
-          </span>
-          入学
-          <br />
-        </p>
+        <div className="mx-auto ">
+          <p className="">
+            2020年
+            <span className="font-bold ">宇都宮大学工学部基盤工学科</span>
+            入学
+            <br />
+          </p>
+        </div>
       </section>
-      <section className="border border-2 border-purple-400 my-12 py-12 rounded-3xl ">
+      <section className="border border-2 border-purple-400 my-12 py-12 rounded-3xl flex flex-col">
         <h2 className="text-center text-xl mb-4 text-blue-500 ">
           Work history
         </h2>
-        <p className="mx-auto w-1/3 text-right">
-          2020年{" "}
-          <span className="border-b-2 border-black ">株式会社サクシード</span>{" "}
-          アルバイト(～現在)
-          <br />
-          2020年{" "}
-          <span className="border-b-2 border-black ">
-            つばめソリューション
-          </span>{" "}
-          アルバイト(～現在)
-        </p>
+        <div className="mx-auto">
+          <p className="text-right">
+            2020年
+            <span className="font-bold">株式会社サクシード</span>
+            アルバイト(～現在)
+          </p>
+        </div>
+        <div className="mx-auto">
+          <p className="text-right">
+            2020年
+            <span className="font-bold">つばめソリューション</span>
+            アルバイト(～現在)
+          </p>
+        </div>
       </section>
       <section className="border border-2 border-purple-400 my-12 py-12 rounded-3xl ">
         <h2 className="text-center text-xl mb-4 text-blue-500 ">

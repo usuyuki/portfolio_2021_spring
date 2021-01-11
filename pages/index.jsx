@@ -16,7 +16,7 @@ export default function Home({ allWorksData, allBlogsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <main className="h-screen w-screen grid grid-cols-10 ">
+      <main className=" w-screen grid grid-cols-10 ">
         <aside className="">
           <p className={usuyukiStyles.copyright}>copyright 2020 usuyuki</p>
         </aside>
@@ -34,7 +34,7 @@ export default function Home({ allWorksData, allBlogsData }) {
               </button>
             </div>
           </section>
-          <div className="h-screen grid grid-cols-2  gap-4">
+          <div className=" grid grid-cols-2  gap-4">
             <section className="text-center mx-auto my-5 border border-3  border-gray-600 rounded-2xl  ">
               <h2 className="text-center text-2xl mt-5">Latest works</h2>
               <ul className="">
