@@ -26,6 +26,18 @@ export default function Home({ allWorksData, allBlogsData }) {
             <p className="text-center mx-auto">
               大学1年生です。珈琲が好きです。
             </p>
+            <p className="text-center text-2xl mx-auto">
+              変更予定
+              <br />
+              横スクロールの採用
+              <br />
+              1ページ目自己紹介 2ページ目から趣味を1つずつ
+              ②プログラミング(画像1枚+説明+WP制作物(worでタクソノミーをprogramingにしてAPI叩く←画像もほしい))
+              ③動画制作(WPのworks videoeditingタクソノミーから抽出)
+              ③鉄道（WPblogの鉄道記事を叩く） ④珈琲(WPのcoffeeをAPI叩く)
+              ⑤読書（読書メーターをiframeできない？orWP）
+              ↑いい案だけどReactのメリットを活かせていない。(ページ遷移の速さが現状ゼロ)
+            </p>
             <div className="text-center mt-4">
               <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
                 <Link href="/aboutMe">
@@ -74,7 +86,7 @@ export default function Home({ allWorksData, allBlogsData }) {
               <h2 className="text-center text-2xl mt-5">Latest Blogs</h2>
               <ul className="">
                 <li className="m-5" key={allBlogsData[0].id}>
-                  <Link href={`/works/${allBlogsData[0].id}`}>
+                  <Link href={`/blogs/${allBlogsData[0].id}`}>
                     <a>{allBlogsData[0].title}</a>
                   </Link>
                   <br />
@@ -105,6 +117,11 @@ export default function Home({ allWorksData, allBlogsData }) {
               </button>
             </section>
           </div>
+          <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
+            <Link href="/blog">
+              <a className="hover:text-white">ブログ一覧</a>
+            </Link>
+          </button>
         </div>
         <nav className={usuyukiStyles.fixedSocial}>
           <p>Social</p>
