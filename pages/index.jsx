@@ -77,7 +77,7 @@ export default function Home({ allWorksData, allBlogsData }) {
               </ul>
               <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
                 <Link href="/archive/allWorks">
-                  <a class="hover:text-white">Show more</a>
+                  <a className="hover:text-white">Show more</a>
                 </Link>
               </button>
             </section>
@@ -112,7 +112,7 @@ export default function Home({ allWorksData, allBlogsData }) {
               </ul>
               <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
                 <Link href="/archive/allBlogs">
-                  <a class="hover:text-white">Show more</a>
+                  <a className="hover:text-white">Show more</a>
                 </Link>
               </button>
             </section>
