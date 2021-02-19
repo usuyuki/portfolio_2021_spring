@@ -46,6 +46,41 @@ export default function Home({ allWorksData, allBlogsData }) {
               </button>
             </div>
           </section>
+          <div class="container">
+            <div class="gooey">
+              <input type="checkbox" id="start" />
+              <label htmlFor="start">
+                <div class="menu-open-button">
+                  <i class="fas fa-plus plus"></i>
+                </div>
+              </label>
+              <div class="circleFirst">
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
+              <div class="circleSecond">
+                <FontAwesomeIcon icon={faTwitter} />
+              </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="filter">
+                  <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="20"
+                    result="blur"
+                  />
+                  <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="filter"
+                  />
+                  <feBlend in="SourceGraphic" in2="filter" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
           <div className=" grid grid-cols-2  gap-4">
             <section className="text-center mx-auto my-5 border border-3  border-gray-600 rounded-2xl  ">
               <h2 className="text-center text-2xl mt-5">Latest works</h2>
