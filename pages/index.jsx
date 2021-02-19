@@ -133,6 +133,12 @@ export default function Home({ allWorksData, allBlogsData }) {
           </a>
         </nav>
       </main>
+      <div className="loading mx-auto">
+        <span className="title">LOADING</span>
+        <span className="circle1"></span>
+        <span className="circle2"></span>
+        <span className="circle3"></span>
+      </div>
     </Layout>
   );
 }
