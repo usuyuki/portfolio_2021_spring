@@ -5,7 +5,7 @@
   top: 50%; /* 基準の位置を画面の一番下に指定する */
   left: 0.4%; /* 基準の位置を画面の一番右に指定する */
   /* width: 300px; 幅を指定する */
-  color: rgb(82, 82, 82);
+  color: black;
 }
 .fixedSocial {
   /* -ms-writing-mode: tb-rl;
