@@ -212,3 +212,14 @@ img {
     opacity: 1;
   }
 }
+/* 画像切り出し */
+.radius-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 40% 70% 50% 30%/50%;
+}
+.radius-wrapper {
+  float: left;
+  shape-outside: circle(); /*文字が回り込む*/
+}

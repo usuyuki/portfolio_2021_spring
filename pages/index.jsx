@@ -9,8 +9,12 @@ import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { BaseHeader } from "../components/layouts/BaseHeader";
-import { TopCircleMenu } from "../components/layouts/TopCircleMenu";
+// import { BaseHeader } from "../components/layouts/BaseHeader";
+// import { TopCircleMenu } from "../components/layouts/TopCircleMenu";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+// Import Swiper styles
+import "swiper/swiper-bundle.min.css";
 export default function Home({ allWorksData, allBlogsData }) {
   return (
     <Layout home>
@@ -19,10 +23,34 @@ export default function Home({ allWorksData, allBlogsData }) {
       </Head>
       <main className=" w-screen">
         {/*  ヘッダー */}
-        <BaseHeader />
-        <TopCircleMenu />
-
-        <div className="loading mx-auto">
+        {/* <BaseHeader />
+        <TopCircleMenu /> */}
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          ...
+        </Swiper>
+        <div className="mx-auto w-1/2 mt-10">
+          <div className="mx-10 radius-wrapper w-50">
+            <Image
+              src="/images/top/coffeeProcess2.jpg"
+              className="radius-img w-50"
+              width={300}
+              height={300}
+            />
+          </div>
+          <p className="text-lg mx-10">
+            珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
+          </p>
+        </div>
+        <div className="loading mx-auto mt-20">
           <span className="title  text-center">CONSTRUCTING</span>
           <span className="circle1"></span>
           <span className="circle2"></span>
