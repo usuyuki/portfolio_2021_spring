@@ -533,3 +533,22 @@ img {
 }
 
 /* ここまでハンバーガーメニュー */
+
+/* カーソル点滅 */
+.cursor {
+  animation: tenmetu 1s infinite;
+}
+@keyframes tenmetu {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

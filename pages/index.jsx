@@ -39,6 +39,23 @@ export default function Home({ allWorksData, allBlogsData }) {
           <SwiperSlide>Slide 4</SwiperSlide>
           ...
         </Swiper>
+        <article className="md:grid grid-cols-2 my-16">
+          <div className="md:mr-12 mx-auto">
+            <div className="w-100  bg-black text-white p-4">
+              <p>[usuyuki@usuyuki-portfolio ~]$ ls -a</p>
+              <p>Python　JavaScript　PHP　HTML　CSS　</p>
+              <br />
+
+              <p>
+                [usuyuki@usuyuki-portfolio ~]$
+                <span className="cursor">|</span>
+              </p>
+            </div>
+          </div>
+          <div className="md:ml-12 mx-auto">
+            <h1 className="text-center text-3xl mt-12">Loves Enginnering</h1>
+          </div>
+        </article>
         <div className="mx-auto w-1/2 mt-10">
           <div className="mx-10 radius-wrapper w-50">
             <Image
@@ -52,7 +69,7 @@ export default function Home({ allWorksData, allBlogsData }) {
             珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
           </p>
         </div>
-        <div className="loading mx-auto mt-20 " style={{ height: "100vh" }}>
+        <div className="loading mx-auto mt-20 ">
           <span className="title  text-center">CONSTRUCTING</span>
           <span className="circle1"></span>
           <span className="circle2"></span>

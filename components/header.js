@@ -3,7 +3,7 @@ export default function Header(props) {
   return (
     <header className="bg-black  " style={{ width: "100vw", height: "80px" }}>
       <div className="flex items-center min-h-full">
-        <h1 className="text-white font-dot">Usuyuki Portfolio</h1>
+        <h1 className="text-white font-dot ml-4">Usuyuki Portfolio</h1>
       </div>
       <div className="drawer">
         <input type="checkbox" id="drawer-check" className="drawer-hidden" />
