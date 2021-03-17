@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 import Header from "./header";
+
 import Footer from "./footer";
 
 const name = "うすゆき";
@@ -41,6 +42,7 @@ export default function Layout({ children, home, props }) {
         />
       </Head>
       <Header />
+
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

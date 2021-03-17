@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
+import TopCircle from "../components/topcircle";
 export default function Home({ allWorksData, allBlogsData }) {
   return (
     <Layout home>
@@ -22,6 +23,7 @@ export default function Home({ allWorksData, allBlogsData }) {
         <title>{siteTitle}</title>
       </Head>
       <main className=" w-screen">
+        <TopCircle circleName={"usuyuki portfolio"} />
         {/*  ヘッダー */}
         {/* <BaseHeader />
         <TopCircleMenu /> */}
