@@ -3,10 +3,13 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
+import Header from "./header";
+import Footer from "./footer";
+
 const name = "うすゆき";
 export const siteTitle = "うすゆきポートフォリオwithNext.js";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, props }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,36 +26,21 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+
+        {/* GoogleFonts */}
+        {/* マテリアルデザインのロゴフォント */}
+        <link
+          rel="stylesheet"
+          href="/path/to/material-icons/iconfont/material-icons.css"
+        />
+        {/* ドットフォント */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <div className="mt-10">
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </div>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
+      <Header />
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
@@ -61,6 +49,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

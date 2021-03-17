@@ -50,7 +50,7 @@ export default function Home({ allWorksData, allBlogsData }) {
             珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
           </p>
         </div>
-        <div className="loading mx-auto mt-20">
+        <div className="loading mx-auto mt-20 " style={{ height: "100vh" }}>
           <span className="title  text-center">CONSTRUCTING</span>
           <span className="circle1"></span>
           <span className="circle2"></span>
