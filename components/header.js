@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Header(props) {
   return (
     <header className="bg-black  " style={{ width: "100vw", height: "80px" }}>
@@ -12,40 +13,44 @@ export default function Header(props) {
         </label>
 
         <nav className="drawer-content ">
-          <div className="md:h-full h-screen      flex justify-center flex-wrap md:items-center mx-4">
-            <a
-              className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center md:mt-0 mt-8 no-underline"
-              href=""
-            >
-              <span className="material-icons-outlined">home</span>TOP
-            </a>
+          <div className="md:h-full h-screen flex justify-center flex-wrap md:items-center mx-4">
+            <Link href="">
+              <a className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center md:mt-0 mt-8 no-underline">
+                <span class="material-icons-round">home</span>TOP
+              </a>
+            </Link>
+            <Link href="./works">
+              <a className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline">
+                Works
+              </a>
+            </Link>
+            <Link href="/blogs">
+              <a
+                className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
+                href=""
+              >
+                Blogs
+              </a>
+            </Link>
+            <Link href="/aboutme">
+              <a
+                className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
+                href=""
+              >
+                AboutMe
+              </a>
+            </Link>
+
             <a
               className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
-              href=""
-            >
-              Works
-            </a>
-            <a
-              className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
-              href=""
-            >
-              Blogs
-            </a>
-            <a
-              className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
-              href=""
-            >
-              AboutMe
-            </a>
-            <a
-              className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
-              href=""
+              href="https://github.com/Usuyuki"
             >
               GitHub
             </a>
+
             <a
               className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center no-underline"
-              href=""
+              href="https://github.com/usuyuki26"
             >
               Twitter
             </a>

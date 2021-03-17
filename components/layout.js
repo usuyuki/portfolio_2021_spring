@@ -30,8 +30,8 @@ export default function Layout({ children, home, props }) {
         {/* GoogleFonts */}
         {/* マテリアルデザインのロゴフォント */}
         <link
+          href="https://fonts.googleapis.com/css2?family=Material+Icons"
           rel="stylesheet"
-          href="/path/to/material-icons/iconfont/material-icons.css"
         />
         {/* ドットフォント */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
