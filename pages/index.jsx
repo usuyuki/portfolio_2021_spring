@@ -16,6 +16,7 @@ import Image from "next/image";
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
 import TopCircle from "../components/topcircle";
+import TopMainButton from "../components/button/topMainButton";
 export default function Home({ allWorksData, allBlogsData }) {
   return (
     <Layout home>
@@ -39,8 +40,8 @@ export default function Home({ allWorksData, allBlogsData }) {
           <SwiperSlide>Slide 4</SwiperSlide>
           ...
         </Swiper>
-        <article className="md:grid grid-cols-2 my-16">
-          <div className="md:mr-12 mx-auto">
+        <article className="flex justify-center flex-wrap my-16">
+          <div className="md:mr-12 md:w-1/2 w-full">
             <div className="w-100  bg-black text-white p-4">
               <p>[usuyuki@usuyuki-portfolio ~]$ ls -a</p>
               <p>Python　JavaScript　PHP　HTML　CSS　</p>
@@ -52,11 +53,33 @@ export default function Home({ allWorksData, allBlogsData }) {
               </p>
             </div>
           </div>
-          <div className="md:ml-12 mx-auto">
+          <div className="md:ml-12 md:w-1/2 w-full md:order-2 order-1">
             <h1 className="text-center text-3xl mt-12">Loves Enginnering</h1>
           </div>
         </article>
-        <div className="mx-auto w-1/2 mt-10">
+        {/* <article className="flex justify-center flex-wrap my-16">
+          <div className="md:mr-12 w-full"></div>
+          <div className="md:ml-12 md:w-1/2 w-full"></div>
+        </article> */}
+        <article className="flex justify-center my-16 flex-wrap">
+          <div className="md:mr-12 md:w-1/2 w-full">
+            <h2 className="text-3xl ">Loves Coffee</h2>
+            <p className="text-lg mx-10 ">
+              珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
+            </p>
+            <TopMainButton name={"詳しく見る"} link={"/coffee"} />
+          </div>
+          <div className="md:ml-12 md:w-1/2 w-full">
+            {" "}
+            <Image
+              src="/images/top/coffeeProcess2.jpg"
+              className="radius-img w-50"
+              width={300}
+              height={300}
+            />
+          </div>
+        </article>
+        {/* <div className="mx-auto w-1/2 mt-10">
           <div className="mx-10 radius-wrapper w-50">
             <Image
               src="/images/top/coffeeProcess2.jpg"
@@ -68,7 +91,7 @@ export default function Home({ allWorksData, allBlogsData }) {
           <p className="text-lg mx-10">
             珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
           </p>
-        </div>
+        </div> */}
         <div className="loading mx-auto mt-20 ">
           <span className="title  text-center">CONSTRUCTING</span>
           <span className="circle1"></span>
