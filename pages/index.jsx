@@ -9,129 +9,95 @@ import Link from "next/link";
 import Date from "../components/date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
-
+// import { BaseHeader } from "../components/layouts/BaseHeader";
+// import { TopCircleMenu } from "../components/layouts/TopCircleMenu";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+// Import Swiper styles
+import "swiper/swiper-bundle.min.css";
+import TopCircle from "../components/topcircle";
+import TopMainButton from "../components/button/topMainButton";
 export default function Home({ allWorksData, allBlogsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <main className=" w-screen grid grid-cols-10 ">
-        <aside className="">
-          <p className={usuyukiStyles.copyright}>copyright 2020 usuyuki</p>
-        </aside>
+      <main className=" w-screen">
+        <TopCircle circleName={"usuyuki portfolio"} />
+        {/*  ヘッダー */}
+        {/* <BaseHeader />
+        <TopCircleMenu /> */}
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          ...
+        </Swiper>
+        <article className="flex justify-center flex-wrap my-16">
+          <div className="md:mr-12 md:w-1/2 w-full">
+            <div className="w-100  bg-black text-white p-4">
+              <p>[usuyuki@usuyuki-portfolio ~]$ ls -a</p>
+              <p>Python　JavaScript　PHP　HTML　CSS　</p>
+              <br />
 
-        <div className="col-span-8">
-          <section className="">
-            <p className="text-center mx-auto">
-              大学1年生です。珈琲が好きです。
-            </p>
-            <p className="text-center text-2xl mx-auto">
-              変更予定
-              <br />
-              横スクロールの採用
-              <br />
-              1ページ目自己紹介 2ページ目から趣味を1つずつ
-              ②プログラミング(画像1枚+説明+WP制作物(worでタクソノミーをprogramingにしてAPI叩く←画像もほしい))
-              ③動画制作(WPのworks videoeditingタクソノミーから抽出)
-              ③鉄道（WPblogの鉄道記事を叩く） ④珈琲(WPのcoffeeをAPI叩く)
-              ⑤読書（読書メーターをiframeできない？orWP）
-              ↑いい案だけどReactのメリットを活かせていない。(ページ遷移の速さが現状ゼロ)
-            </p>
-            <div className="text-center mt-4">
-              <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-                <Link href="/aboutMe">
-                  <a className="hover:text-white">Show about me more</a>
-                </Link>
-              </button>
+              <p>
+                [usuyuki@usuyuki-portfolio ~]$
+                <span className="cursor">|</span>
+              </p>
             </div>
-          </section>
-          <div className=" grid grid-cols-2  gap-4">
-            <section className="text-center mx-auto my-5 border border-3  border-gray-600 rounded-2xl  ">
-              <h2 className="text-center text-2xl mt-5">Latest works</h2>
-              <ul className="">
-                <li className="m-5" key={allWorksData[0].id}>
-                  <Link href={`/works/${allWorksData[0].id}`}>
-                    <a>{allWorksData[0].title}</a>
-                  </Link>
-                  <br />
-                  <small className="text-center text-gray-600">
-                    {allWorksData[0].date}
-                  </small>
-
-                  <p>{allWorksData[0].content}</p>
-                  <p>{allWorksData[0].work_tech}</p>
-                </li>
-                <li className="m-5" key={allWorksData[1].id}>
-                  <Link href={`/works/${allWorksData[1].id}`}>
-                    <a>{allWorksData[1].title}</a>
-                  </Link>
-                  <br />
-                  <small className="text-center text-gray-600">
-                    {allWorksData[1].date}
-                  </small>
-
-                  <p>{allWorksData[1].content}</p>
-                  <p>{allWorksData[1].work_tech}</p>
-                </li>
-              </ul>
-              <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-                <Link href="/archive/allWorks">
-                  <a className="hover:text-white">Show more</a>
-                </Link>
-              </button>
-            </section>
-            {/* ここからブログ */}
-            <section className="text-center  my-5 border border-3 border-gray-600 rounded-2xl  ">
-              <h2 className="text-center text-2xl mt-5">Latest Blogs</h2>
-              <ul className="">
-                <li className="m-5" key={allBlogsData[0].id}>
-                  <Link href={`/blogs/${allBlogsData[0].id}`}>
-                    <a>{allBlogsData[0].title}</a>
-                  </Link>
-                  <br />
-                  <small className="text-center text-gray-600">
-                    {allBlogsData[0].date}
-                  </small>
-
-                  <p>{allBlogsData[0].content}</p>
-                  <p>{allBlogsData[0].work_tech}</p>
-                </li>
-                <li className="m-5" key={allBlogsData[1].id}>
-                  <Link href={`/blogs/${allBlogsData[1].id}`}>
-                    <a>{allBlogsData[1].title}</a>
-                  </Link>
-                  <br />
-                  <small className="text-center text-gray-600">
-                    {allBlogsData[1].date}
-                  </small>
-
-                  <p>{allBlogsData[1].content}</p>
-                  <p>{allBlogsData[1].work_tech}</p>
-                </li>
-              </ul>
-              <button className="rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-                <Link href="/archive/allBlogs">
-                  <a className="hover:text-white">Show more</a>
-                </Link>
-              </button>
-            </section>
           </div>
-          <button className="mx-auto text-center rounded border border-4 text-blue-800 border-purple-700 py-1 px-2 mb-5 hover:bg-purple-700 hover:text-white animation-ping duration-1000">
-            <Link href="/blog">
-              <a className="hover:text-white">ブログ一覧</a>
-            </Link>
-          </button>
+          <div className="md:ml-12 md:w-1/2 w-full md:order-2 order-1">
+            <h1 className="text-center text-3xl mt-12">Loves Enginnering</h1>
+          </div>
+        </article>
+        {/* <article className="flex justify-center flex-wrap my-16">
+          <div className="md:mr-12 w-full"></div>
+          <div className="md:ml-12 md:w-1/2 w-full"></div>
+        </article> */}
+        <article className="flex justify-center my-16 flex-wrap">
+          <div className="md:mr-12 md:w-1/2 w-full">
+            <h2 className="text-3xl ">Loves Coffee</h2>
+            <p className="text-lg mx-10 ">
+              珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
+            </p>
+            <TopMainButton name={"詳しく見る"} link={"/coffee"} />
+          </div>
+          <div className="md:ml-12 md:w-1/2 w-full">
+            {" "}
+            <Image
+              src="/images/top/coffeeProcess2.jpg"
+              className="radius-img w-50"
+              width={300}
+              height={300}
+            />
+          </div>
+        </article>
+        {/* <div className="mx-auto w-1/2 mt-10">
+          <div className="mx-10 radius-wrapper w-50">
+            <Image
+              src="/images/top/coffeeProcess2.jpg"
+              className="radius-img w-50"
+              width={300}
+              height={300}
+            />
+          </div>
+          <p className="text-lg mx-10">
+            珈琲の良さはなんと言ってもオリジナリティです。とりわけドリップコーヒーでは同じ味になることは殆どありません。温度や抽出時間、挽目を変えるだけで違った味わいが楽しめます。
+          </p>
+        </div> */}
+        <div className="loading mx-auto mt-20 ">
+          <span className="title  text-center">CONSTRUCTING</span>
+          <span className="circle1"></span>
+          <span className="circle2"></span>
+          <span className="circle3"></span>
         </div>
-        <nav className={usuyukiStyles.fixedSocial}>
-          <p>Social</p>
-          <a href="https://twitter.com/usuyuki26" className="text-gray-800">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="https://github.com/Usuyuki" className="text-gray-800">
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </nav>
       </main>
     </Layout>
   );
