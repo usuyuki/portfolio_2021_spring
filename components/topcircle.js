@@ -1,6 +1,6 @@
 export default function TopCircle(props) {
   return (
-    <div className="grid grid-cols-3 my-10">
+    <div className="grid grid-cols-3 my-10 w-screen">
       <div className="flex items-center">
         <h2 className="text-center mx-auto">tekitou</h2>
       </div>
