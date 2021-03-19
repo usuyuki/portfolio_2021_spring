@@ -23,6 +23,16 @@ body {
   display: flex;
   align-items: center;
 }
+.top-circle-animation {
+  animation: "circle-border" 6s ease-in-out 0s infinite alternate;
+}
+@keyframes circle-border {
+  0% {
+  }
+  100% {
+    border-color: pink;
+  }
+}
 * {
   box-sizing: border-box;
 }

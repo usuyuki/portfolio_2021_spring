@@ -11,13 +11,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 // import { BaseHeader } from "../components/layouts/BaseHeader";
 // import { TopCircleMenu } from "../components/layouts/TopCircleMenu";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, autoplay, pagination } from "swiper/react";
 import Image from "next/image";
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
 import TopCircle from "../components/topcircle";
 import TopMainButton from "../components/button/topMainButton";
 export default function Home({ allWorksData, allBlogsData }) {
+  const swiperSetting = {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev",
+    // },
+  };
   return (
     <Layout home>
       <Head>
@@ -72,7 +88,7 @@ export default function Home({ allWorksData, allBlogsData }) {
             <div className="md:ml-4  mx-auto text-center ">
               <Image
                 src="/images/top/coffeeProcess2.jpg"
-                className="radius-img w-50"
+                className="radius-img"
                 width={300}
                 height={300}
               />
@@ -82,26 +98,36 @@ export default function Home({ allWorksData, allBlogsData }) {
         </article>
         <article className="scroll-area flex justify-center my-64 flex-wrap">
           <div className=" md:w-1/2 w-full">
-            <div className="md:mr-4">
-              <Swiper
-                spaceBetween={50}
-                slidesPerView={3}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
-              >
+            <div className="md:mr-4 mx-auto text-center rounded-2xl">
+              <Swiper {...swiperSetting}>
                 <SwiperSlide>
                   {" "}
                   <Image
                     src="/images/top/coffeeProcess2.jpg"
-                    className="radius-img w-50"
+                    className="rounded-2xl  object-contain"
                     width={300}
                     height={300}
                   />
                 </SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <Image
+                    src="/images/top/amanohasidate.JPG"
+                    className="rounded-2xl  object-contain"
+                    width={300}
+                    height={300}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <Image
+                    src="/images/top/miyazima.JPG"
+                    className="rounded-2xl  object-contain"
+                    width={300}
+                    height={300}
+                  />
+                </SwiperSlide>
                 <SwiperSlide>Slide 4</SwiperSlide>
-                ...
               </Swiper>
             </div>
           </div>
@@ -119,12 +145,22 @@ export default function Home({ allWorksData, allBlogsData }) {
             <div className="md:ml-4"></div>
           </div>
         </article> */}
+        <article className="scroll-area flex justify-center my-64 flex-wrap">
+          <div className=" md:w-1/2 w-full">
+            <div className="md:mr-4">
+              <h2 className="text-2xl">Loves Books</h2>
+            </div>
+          </div>
+          <div className=" md:w-1/2 w-full">
+            <div className="md:ml-4"></div>
+          </div>
+        </article>
 
         {/* <div className="mx-auto w-1/2 mt-10">
           <div className="mx-10 radius-wrapper w-50">
             <Image
               src="/images/top/coffeeProcess2.jpg"
-              className="radius-img w-50"
+              className="rounded-2xl"
               width={300}
               height={300}
             />
