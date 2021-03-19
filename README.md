@@ -17,6 +17,8 @@ https://tech.playground.style/javascript/fetch-api-data/
 - インフラ:Vercel
 - フロントエンド:Next.js(React)
 - バックエンド？:WordPress(以前のポートフォリオの API)
+- 管理:GitHub
+- デザイン:Figma
 
 ## カラー
 
