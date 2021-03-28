@@ -11,24 +11,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 // import { BaseHeader } from "../components/layouts/BaseHeader";
 // import { TopCircleMenu } from "../components/layouts/TopCircleMenu";
-import { Swiper, SwiperSlide, autoplay, pagination } from "swiper/react";
+
 import Image from "next/image";
 // Import Swiper styles
-import "swiper/swiper-bundle.min.css";
+
 import TopCircle from "../components/topcircle";
 import TopMainButton from "../components/button/topMainButton";
+import SwiperCore, {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y]);
 export default function Home({ allWorksData, allBlogsData }) {
   const swiperSetting = {
-    spaceBetween: 30,
-    centeredSlides: true,
+    // initialSlide: 0,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    // centeredSlides: true,
     autoplay: {
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false,
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+    loop: true,
     // navigation: {
     //   nextEl: ".swiper-button-next",
     //   prevEl: ".swiper-button-prev",
@@ -98,7 +106,7 @@ export default function Home({ allWorksData, allBlogsData }) {
         </article>
         <article className="scroll-area flex justify-center my-64 flex-wrap">
           <div className=" md:w-1/2 w-full">
-            <div className="md:mr-4 mx-auto text-center rounded-2xl">
+            <div className="md:mr-4 mx-auto text-center rounded-2xl d-inline-block">
               <Swiper {...swiperSetting}>
                 <SwiperSlide>
                   {" "}

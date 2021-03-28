@@ -1,7 +1,10 @@
 import Link from "next/link";
 export default function Header(props) {
   return (
-    <header className="bg-black  " style={{ width: "100vw", height: "80px" }}>
+    <header
+      className="bg-black fixed "
+      style={{ width: "100vw", height: "80px" }}
+    >
       <div className="flex items-center min-h-full">
         <h1 className="text-white font-dot ml-4">Usuyuki Portfolio</h1>
       </div>
@@ -12,11 +15,11 @@ export default function Header(props) {
           <span></span>
         </label>
 
-        <nav className="drawer-content ">
+        <nav className="drawer-content font-dot ">
           <div className="md:h-full h-screen flex justify-center flex-wrap md:items-center mx-4">
             <Link href="">
               <a className="md:w-auto md:h-auto h-min w-screen  mx-auto md:text-left text-center md:mt-0 mt-8 no-underline">
-                <span class="material-icons-round">home</span>TOP
+                <span className="material-icons-round">home</span>TOP
               </a>
             </Link>
             <Link href="./works">

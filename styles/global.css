@@ -505,6 +505,7 @@ img {
   top: 20px;
   right: 1px;
   content: "menu";
+  font-family: "DotGothic16", sans-serif;
   transition: 1s;
   color: white;
 }
