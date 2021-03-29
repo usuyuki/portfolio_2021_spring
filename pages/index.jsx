@@ -70,6 +70,7 @@ export default function Home({ allWorksData, allBlogsData }) {
             <div className="md:ml-4">
               <h1 className="text-center text-3xl mt-12 mb-4">
                 Loves Enginnering
+                <span className="material-icons">&#xE87C;</span>
               </h1>
             </div>
           </div>
