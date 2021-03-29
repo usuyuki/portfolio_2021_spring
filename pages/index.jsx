@@ -74,6 +74,7 @@ export default function Home({ allWorksData, allBlogsData }) {
             </div>
           </div>
         </article>
+
         {/* <article className="scroll-area flex justify-center flex-wrap my-16">
           <div className="md:mr-12 w-full"></div>
           <div className="md:ml-12 md:w-1/2 w-full"></div>
@@ -106,43 +107,22 @@ export default function Home({ allWorksData, allBlogsData }) {
         </article>
         <article className="scroll-area flex justify-center my-64 flex-wrap">
           <div className=" md:w-1/2 w-full">
-            <div className="md:mr-4 mx-auto text-center rounded-2xl d-inline-block">
-              <Swiper {...swiperSetting}>
-                <SwiperSlide>
-                  {" "}
-                  <Image
-                    src="/images/top/coffeeProcess2.jpg"
-                    className="rounded-2xl  object-contain"
-                    width={300}
-                    height={300}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <Image
-                    src="/images/top/amanohasidate.JPG"
-                    className="rounded-2xl  object-contain"
-                    width={300}
-                    height={300}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  {" "}
-                  <Image
-                    src="/images/top/miyazima.JPG"
-                    className="rounded-2xl  object-contain"
-                    width={300}
-                    height={300}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-              </Swiper>
-            </div>
+            <div className="md:mr-4 mx-auto text-center rounded-2xl d-inline-block"></div>
           </div>
           <div className=" md:w-1/2 w-full">
             <div className="md:ml-4">
-              <h2 className="text-3xl text-center mb-4">Loves TrainTravel</h2>
+              <h2 className="text-3xl text-center mb-4">Loves Books</h2>
             </div>
+          </div>
+        </article>
+        <article className="scroll-area flex justify-center my-64 flex-wrap">
+          <div className="">
+            <h2 className="text-3xl text-center mb-4">Loves TrainTravel</h2>
+            <p class="ledText">
+              <span>
+                グリーン車は４号車・５号車です。この列車は、全車自由席です。
+              </span>
+            </p>
           </div>
         </article>
         {/* <article className="scroll-area flex justify-center my-64 flex-wrap">
@@ -159,9 +139,16 @@ export default function Home({ allWorksData, allBlogsData }) {
               <h2 className="text-2xl">Loves Books</h2>
             </div>
           </div>
-          <div className=" md:w-1/2 w-full">
-            <div className="md:ml-4"></div>
-          </div>
+          <div>読書メーターへ行く！</div>
+          <a href="https://bookmeter.com/users/1141982">
+            {" "}
+            <Image
+              src="/images/top/coffeeProcess2.jpg"
+              className="rounded-full"
+              width={300}
+              height={300}
+            />
+          </a>
         </article>
 
         {/* <div className="mx-auto w-1/2 mt-10">
