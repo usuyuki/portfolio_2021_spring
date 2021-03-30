@@ -8,6 +8,8 @@ body {
   line-height: 1.6;
   font-size: 18px;
   background-color: #929292;
+  overflow: hidden;
+  scroll-behavior: smooth;
 }
 @font-face {
   font-family: "Material Icons";

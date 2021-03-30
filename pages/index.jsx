@@ -17,6 +17,7 @@ import Image from "next/image";
 
 import TopCircle from "../components/topcircle";
 import TopMainButton from "../components/button/topMainButton";
+import TopScrollButton from "../components/button/topScrollButton";
 import SwiperCore, {
   Autoplay,
   Navigation,
@@ -51,7 +52,10 @@ export default function Home({ allWorksData, allBlogsData }) {
         <article className="scroll-area ">
           <TopCircle circleName={"usuyuki portfolio"} />
         </article>
-        <article className="scroll-area flex justify-center flex-wrap my-64">
+        <article
+          className="scroll-area flex justify-center flex-wrap my-64"
+          id="pss1"
+        >
           <div className="md:w-1/2 w-full">
             <div className="md:mr-4 md:ml-12">
               <div className="w-100  bg-black text-white p-4 md:order-1 order-2">
@@ -74,13 +78,17 @@ export default function Home({ allWorksData, allBlogsData }) {
               </h1>
             </div>
           </div>
+          <TopScrollButton link={"#pss3"} />
         </article>
 
         {/* <article className="scroll-area flex justify-center flex-wrap my-16">
           <div className="md:mr-12 w-full"></div>
           <div className="md:ml-12 md:w-1/2 w-full"></div>
         </article> */}
-        <article className="scroll-area flex justify-center my-16 flex-wrap">
+        <article
+          className="scroll-area flex justify-center my-16 flex-wrap"
+          id="pss2"
+        >
           <div className=" md:w-1/2 w-full">
             <div className="md:mr-4">
               <h2 className="text-3xl text-center mb-4">Loves Coffee</h2>

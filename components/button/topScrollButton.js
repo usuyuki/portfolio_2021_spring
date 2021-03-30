@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function TopMainButton(props) {
+export default function TopScrollButton(props) {
   return (
     <div className="text-center">
       <style jsx>{`
@@ -32,12 +32,16 @@ export default function TopMainButton(props) {
           text-shadow: 2px 2px 3px #000;
         }
       `}</style>
-      <Link href={props.link}>
-        <a className="btn-shine my-8">
-          {props.name}
-          <span className="ml-4  material-icons">open_in_new</span>
+      <div className="text-center mt-12 w-full">
+        <a className="" href={props.link}>
+          <span
+            class="material-icons md-36"
+            style={{ fontSize: "36px!important" }}
+          >
+            arrow_circle_down
+          </span>
         </a>
-      </Link>
+      </div>
     </div>
   );
 }
